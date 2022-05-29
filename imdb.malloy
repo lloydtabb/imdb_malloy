@@ -13,7 +13,7 @@ source: movies is titles_table + {
 
   declare:
     title_count is count(distinct tconst)
-    total_ratings is sum(ratings.numVotes)
+    total_ratings is sum(ratings.numVotes/1000.0)
 
   query: by_title is {
     group_by: primaryTitle, startYear, ratings.numVotes

@@ -34,7 +34,7 @@ query: star_trek_dashboard is movies_plus -> titles_dashboard + {
 
 // PROBLEM: filtering on Steven Spielberg removes all the other people
 query: spielberg_broken_dashboard is movies_plus -> titles_dashboard + { 
-  where: people.primaryName ~ r'Steven Spielberg' 
+  where: principals.people.primaryName ~ r'Steven Spielberg' 
 }
 
 query: spielberg_dashboard is movies_plus + { 

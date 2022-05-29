@@ -23,10 +23,11 @@ source: movies_queries is movies + {
 
   // Movie Stars Titles time and jobs
   query: top_stars_jobs_and_more_dashboard is by_name + { 
+    where: ratings.numVotes > 50000  // bug: https://github.com/duckdb/duckdb/issues/3734
     nest: 
       by_title + { limit: 5}
-      // by_year_line_chart is by_year
-      // by_job_category
+      by_year_line_chart is by_year
+      by_job_category
     limit: 20 
   } 
 
@@ -48,6 +49,7 @@ source: movies_queries is movies + {
 
   // by Genre, top movies, directors and actors
   query: genres_top_movies_directors_and_actors is  by_genre + {
+    where: ratings.numVotes > 30000 // bug: https://github.com/duckdb/duckdb/issues/3734
     nest: by_title + { limit: 5}
     nest: by_director is by_name + {
       where: principals.category = 'director'
@@ -57,10 +59,5 @@ source: movies_queries is movies + {
       where: principals.category ~ 'act%'
       limit: 5
     }
-  }
-
-  query: searchme is by_title + {
-    where: primaryTitle ~ r'700'
-    group_by: tconst
   }
 }
