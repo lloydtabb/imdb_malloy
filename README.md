@@ -1,10 +1,11 @@
-# imdb_malloy
-Analysis of the IMDB data using Malloy
+# IMDB Dataset
+Analysis of the IMDB data using Malloy.  
 
 Required Tools
   * [Malloy](https://marketplace.visualstudio.com/items?itemName=malloydata.malloy-vscode)
-  * [duckdb ](https://duckdb.org/docs/installation/index) command line
-  * [wget](https://www.gnu.org/software/wget/)
+  * [wget](https://www.gnu.org/software/wget/) - to fetch the data from the server
+  * [duckdb ](https://duckdb.org/docs/installation/index) command line - to convert the data to parquet files.
+
 
 Run 'make' to download and build the data set.
 
