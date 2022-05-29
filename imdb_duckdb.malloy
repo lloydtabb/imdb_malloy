@@ -1,0 +1,8 @@
+source: people_table is table('duckdb:/usr/local/google/home/ltabb/dev/imdb_data/names.parquet') {
+}
+
+source: principals_table is table('duckdb:/usr/local/google/home/ltabb/dev/imdb_data/principals.parquet') {
+}
+
+source: titles_table is table('duckdb:/usr/local/google/home/ltabb/dev/imdb_data/titles.parquet') {
+}
