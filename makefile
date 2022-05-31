@@ -1,5 +1,5 @@
 
-SHELL = zsh
+SHELL = bash
 
 all: principals.parquet titles.parquet names.parquet
 
